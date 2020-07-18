@@ -1,14 +1,10 @@
 from selenium import webdriver
 import time
-
+import sys
 driver = webdriver.Firefox(executable_path= './geckodriver')
 
 try:
-	links = [
-	'https://twitter.com/login',
-	'https://github.com/akshajdevkv/shortlink-maker',
-	'https://selenium-python.readthedocs.io/locating-elements.html'
-	]
+	links = sys.argv[1:]
 
 	for link in links:
 		driver.get('https://bitly.com/')
